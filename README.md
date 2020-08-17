@@ -12,25 +12,26 @@
 运行前
 
 确定安装了 Python 3.6+ (还有 pip) ，需要安装 Flask、 Requests 库，谷歌浏览器或Postman
-运行指南
+
+##运行指南
 
 打开控制台，开启第1个节点
-'''shell
+```shell
 $ python blockchain.py
-'''
+```
 打开二个控制台，开启第2个节点
-'''shell
+```shell
 $ python blockchain.py -p 5001
-'''
+```
 打开三个控制台，开启第3个节点
-'''shell
+```shell
 $ python blockchain.py -p 5002
-'''
+```
 打开第4个控制台，注册节点
-'''shell
+```shell
 $curl -X POST -H "Content-Type:application/json" -d'{"nodes":["http://127.0.0.1:5000"]}' http://127.0.0.1:5001/nodes/register
 $curl -X POST -H "Content-Type:application/json" -d'{"nodes":["http://127.0.0.1:5000"]}' 
-'''
+```
 节点1（也可由其他节点执行）挖矿并提交交易http://localhost:5000/mine
 
 节点1查看全部区块 http://localhost:5000/chain
@@ -44,14 +45,14 @@ $curl -X POST -H "Content-Type:application/json" -d'{"nodes":["http://127.0.0.1:
 节点3获取解密后的消息http://localhost:5002/message2/get
 
 Post请求操作
-'''shell
+```shell
 curl -X POST -H "Content-Type:application/json" -d'{"nodes":["http://127.0.0.1:5001"]}' http://127.0.0.1:5000/nodes/register
 curl -X POST -H "Content-Type:application/json" -d'{"nodes":["http://127.0.0.1:5000"]}' http://127.0.0.1:5001/nodes/register
-'''
+```
 
-'''
+```
 localhost:5000/nodes/resolve
 http://localhost:5001/mine
 http://localhost:5000/message1/get
 http://localhost:5000/message2/get
-'''
+```
